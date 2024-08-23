@@ -2,8 +2,3 @@ npx sequelize-cli model:generate --name User --attributes name:string,username:s
 
 
 npx sequelize-cli model:generate --name Movie --attributes title:string,synopsis:string,trailerUrl:string,imgUrl:string,rating:string,status:string
-
-{
-  "email": "adya@mail.com",
-  "password": "weakpassword"
-}
