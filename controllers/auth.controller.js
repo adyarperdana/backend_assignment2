@@ -25,9 +25,13 @@ exports.register = async (req, res, next) => {
 exports.login = async (req, res, next) => {
   const { email, password } = req.body;
   try {
+    if (!email) throw new UnauthenticatedError("Invalid email or password");
+    if (!password) throw new UnauthenticatedError("Invalid email or password");
+
     const user = await User.findOne({
       where: { email },
     });
+
 
     if (!user) throw new UnauthenticatedError("Invalid email or password");
 
